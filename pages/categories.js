@@ -155,7 +155,7 @@ function Categories({swal}) {
             <button
               type="button"
               onClick={() => {
-                setEditedCategory(null);
+                setEditedCategory();
                 setName('');
                 setParentCategory('');
                 setProperties([]);

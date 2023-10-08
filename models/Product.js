@@ -5,8 +5,19 @@ const ProductSchema = new Schema({
   description: String,
   price: {type: Number, required: true},
   images: [{type:String}],
-  category: {type:mongoose.Types.ObjectId, ref:'Category'},
+  category: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Category',
+    required: true,
+    validate: {
+      validator: function(v) {
+        return v.toString().trim() !== "";
+      },
+      message: "category cannot be empty"
+    }
+  },
   properties: {type:Object},
+  slug: {type: String, default: function() { return this.title }},
 }, {
   timestamps: true,
 });
