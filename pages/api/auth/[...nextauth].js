@@ -4,7 +4,7 @@ import {MongoDBAdapter} from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 import Auth0Provider from "next-auth/providers/auth0";
 
-const adminEmails = ['telescopiens@gmail.com'];
+const adminEmails = ['martin.iribass@gmail.com'];
 
 export const authOptions = {
   secret: process.env.JWT_SECRET,
