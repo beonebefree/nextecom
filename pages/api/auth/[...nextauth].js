@@ -13,7 +13,11 @@ export const authOptions = {
       clientId: process.env.AUTH0_CLIENT_ID,
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
       issuer: process.env.AUTH0_ISSUER_BASE_URL
-    })
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET
+    }),
   ],
   adapter: MongoDBAdapter(clientPromise),
   callbacks: {
@@ -34,6 +38,6 @@ export async function isAdminRequest(req,res) {
   if (!adminEmails.includes(session?.user?.email)) {
     res.status(401);
     res.end();
-    throw 'not an admin';
+    throw 'No eres admin';
   }
 }
