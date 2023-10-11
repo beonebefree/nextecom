@@ -9,11 +9,6 @@ const adminEmails = ['telescopiens@gmail.com'];
 export const authOptions = {
   secret: process.env.JWT_SECRET,
   providers: [
-    Auth0Provider({
-      clientId: process.env.AUTH0_CLIENT_ID,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET,
-      issuer: process.env.AUTH0_ISSUER_BASE_URL
-    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET
